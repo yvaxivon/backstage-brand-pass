@@ -52,9 +52,9 @@ const HeroSection = () => {
             {/* Right Content - ID Badge */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
               <div className="relative">
-                {/* Extended Lanyard for right positioning */}
-                <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 w-1 h-16 bg-gradient-to-b from-gray-300 to-gray-400 rounded-full"></div>
-                <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-6 h-6 border-2 border-gray-300 rounded-full bg-gray-200"></div>
+                {/* Lanyard positioned on the right side */}
+                <div className="absolute -top-16 right-32 w-1 h-16 bg-gradient-to-b from-gray-300 to-gray-400 rounded-full"></div>
+                <div className="absolute -top-20 right-32 w-6 h-6 border-2 border-gray-300 rounded-full bg-gray-200 transform -translate-x-1/2"></div>
                 <IDBadge />
               </div>
             </div>
