@@ -2,41 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Creative Portfolio Design System - Bold, Vibrant, Professional */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 0%;
+
+    /* Creative Gradient System */
+    --gradient-hero: linear-gradient(135deg, hsl(320 85% 60%) 0%, hsl(310 90% 40%) 100%);
+    --gradient-accent: linear-gradient(45deg, hsl(25 100% 60%) 0%, hsl(15 100% 55%) 100%);
+
+    /* Brand Colors */
+    --brand-pink: 320 85% 60%;
+    --brand-magenta: 310 90% 40%;
+    --brand-orange: 25 100% 60%;
+    --brand-black: 0 0% 0%;
+    --brand-white: 0 0% 100%;
+
+    /* UI System */
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 25 100% 60%;
+    --accent-foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 320 85% 60%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -94,12 +102,73 @@ All colors MUST be HSL.
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Typography System */
+  .hero-headline {
+    @apply text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight;
+    line-height: 0.9;
+  }
+
+  .hero-tagline {
+    @apply text-lg md:text-xl font-medium opacity-90;
+  }
+
+  .brand-name {
+    @apply text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter;
+    line-height: 0.8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Component Styles */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .badge-3d {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-15deg);
+    box-shadow: 
+      0 10px 25px rgba(0, 0, 0, 0.2),
+      0 5px 10px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-link {
+    @apply relative transition-all duration-300 hover:text-white/80;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Keychain animation */
+  @keyframes gentle-sway {
+    0%, 100% { transform: perspective(1000px) rotateX(5deg) rotateY(-15deg) rotate(0deg); }
+    50% { transform: perspective(1000px) rotateX(5deg) rotateY(-15deg) rotate(1deg); }
+  }
+
+  .badge-sway {
+    animation: gentle-sway 4s ease-in-out infinite;
   }
 }
