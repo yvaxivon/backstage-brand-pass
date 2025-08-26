@@ -27,9 +27,9 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 h-screen flex flex-col justify-between">
         {/* Main Content */}
         <div className="flex-1 flex items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center">
             {/* Left Content */}
-            <div className="space-y-8">
+            <div className="lg:col-span-7 space-y-8">
               <div>
                 <h1 className="hero-headline text-black mb-4">
                   YOUR BRAND'S<br />
@@ -50,16 +50,21 @@ const HeroSection = () => {
             </div>
 
             {/* Right Content - ID Badge */}
-            <div className="flex justify-center lg:justify-end">
-              <IDBadge />
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="relative">
+                {/* Extended Lanyard for right positioning */}
+                <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 w-1 h-16 bg-gradient-to-b from-gray-300 to-gray-400 rounded-full"></div>
+                <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-6 h-6 border-2 border-gray-300 rounded-full bg-gray-200"></div>
+                <IDBadge />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Large Name */}
-        <div className="pb-12">
+        <div className="pb-8">
           <h2 className="brand-name text-black text-center lg:text-left">
-            KAMILA COMME
+            JAZ YVONNE BALUARTE
           </h2>
         </div>
 

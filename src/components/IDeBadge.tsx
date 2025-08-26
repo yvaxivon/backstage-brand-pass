@@ -2,11 +2,7 @@ import profilePhoto from "@/assets/profile-photo.jpg";
 
 const IDBadge = () => {
   return (
-    <div className="relative">
-      {/* Keychain/Lanyard */}
-      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-1 h-8 bg-gradient-to-b from-gray-300 to-gray-400 rounded-full"></div>
-      <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-6 h-6 border-2 border-gray-300 rounded-full bg-gray-200"></div>
-      
+    <div className="relative">      
       {/* Badge */}
       <div className="badge-3d badge-sway bg-gradient-to-br from-orange-400 to-orange-500 rounded-lg p-4 w-64 relative overflow-hidden">
         {/* Badge Header */}
@@ -35,8 +31,8 @@ const IDBadge = () => {
               />
             </div>
             <div>
-              <div className="text-black font-bold text-base">Kamila</div>
-              <div className="text-black font-bold text-base">Comme</div>
+              <div className="text-black font-bold text-sm">Jaz Yvonne</div>
+              <div className="text-black font-bold text-sm">Baluarte</div>
             </div>
           </div>
 
