@@ -32,11 +32,11 @@ const HeroSection = () => {
             <div className="lg:col-span-7 space-y-8">
               <div>
                 <h1 className="hero-headline text-white mb-4">
-                  YOUR BRAND'S<br />
-                  BACKSTAGE PASS
+                  CREATIVE<br />
+                  PORTFOLIO
                 </h1>
                 <p className="hero-tagline text-white/80 max-w-md">
-                  Let's find your authentic voice and get your brand ready to rock the stage!
+                  Crafting unique digital experiences with passion and precision
                 </p>
               </div>
 
@@ -45,7 +45,7 @@ const HeroSection = () => {
                 size="lg" 
                 className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-base font-semibold"
               >
-                Available for new projects
+                View My Work
               </Button>
             </div>
 
