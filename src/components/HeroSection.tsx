@@ -10,7 +10,7 @@ const HeroSection = () => {
       {/* Corner Logo */}
       <div className="absolute top-6 left-6">
         <div className="bg-yellow-400 text-black px-3 py-2 rounded font-bold text-sm transform -rotate-12">
-          MADE WITH<br />FRANCE
+          BSIT<br />STUDENT
         </div>
       </div>
 
@@ -32,11 +32,10 @@ const HeroSection = () => {
             <div className="lg:col-span-7 space-y-8">
               <div>
                 <h1 className="hero-headline text-white mb-4">
-                  CREATIVE<br />
-                  PORTFOLIO
+                  YAZIVONN
                 </h1>
                 <p className="hero-tagline text-white/80 max-w-md">
-                  Crafting unique digital experiences with passion and precision
+                  Full-Stack Developer & UI/UX Designer creating innovative digital solutions
                 </p>
               </div>
 

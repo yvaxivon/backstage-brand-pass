@@ -51,12 +51,12 @@ const IDBadge = () => {
           transition: isDragging ? 'none' : 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       >
-        {/* Header with Pass Card Title */}
+        {/* Header with Portfolio ID Title */}
         <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-200">
           <div className="flex items-center space-x-2">
-            <div className="text-lg font-bold text-black tracking-wide">PASS CARD</div>
+            <div className="text-lg font-bold text-black tracking-wide">PORTFOLIO ID</div>
           </div>
-          <div className="text-xs font-mono text-gray-500 bg-gray-100 px-2 py-1 rounded">001</div>
+          <div className="text-xs font-mono text-gray-500 bg-gray-100 px-2 py-1 rounded">2024</div>
         </div>
 
         {/* Main Content Grid */}
@@ -75,23 +75,23 @@ const IDBadge = () => {
           {/* Info Section */}
           <div className="col-span-2 space-y-3">
             <div>
-              <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Brand:</div>
-              <div className="text-sm font-semibold text-black">Jaz Yvonne Baluarte</div>
+              <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Developer:</div>
+              <div className="text-sm font-semibold text-black">Yazivonn</div>
             </div>
             
             <div>
-              <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Season:</div>
-              <div className="text-sm font-semibold text-black">2024/25</div>
+              <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Year:</div>
+              <div className="text-sm font-semibold text-black">2024</div>
             </div>
 
             <div>
-              <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Style:</div>
-              <div className="text-sm font-semibold text-black">Multidisciplinary Designer</div>
+              <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Stack:</div>
+              <div className="text-sm font-semibold text-black">Full-Stack Dev</div>
             </div>
 
             <div>
-              <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Type:</div>
-              <div className="text-sm font-semibold text-black">Excl.Pass</div>
+              <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Status:</div>
+              <div className="text-sm font-semibold text-black">Available</div>
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@ const IDBadge = () => {
 
           {/* Serial Number */}
           <div className="text-xs font-mono text-gray-500">
-            #JYB2024-001
+            #YAZ2024-DEV
           </div>
         </div>
 
