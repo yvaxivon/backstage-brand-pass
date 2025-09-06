@@ -7,12 +7,16 @@
 @layer base {
   :root {
     /* Core Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
 
-    /* Creative Gradient System */
-    --gradient-hero: linear-gradient(135deg, hsl(320 85% 60%) 0%, hsl(310 90% 40%) 100%);
-    --gradient-accent: linear-gradient(45deg, hsl(25 100% 60%) 0%, hsl(15 100% 55%) 100%);
+    /* Creative Gradient System with Liquid Animation */
+    --gradient-hero: 
+      radial-gradient(circle at 20% 80%, rgba(55, 65, 81, 0.8) 0%, transparent 50%), 
+      radial-gradient(circle at 80% 20%, rgba(31, 41, 55, 0.9) 0%, transparent 50%), 
+      radial-gradient(circle at 40% 40%, rgba(75, 85, 99, 0.7) 0%, transparent 50%), 
+      linear-gradient(135deg, #111827 0%, #1f2937 50%, #374151 100%);
+    --gradient-accent: linear-gradient(135deg, #374151 0%, #1f2937 100%);
 
     /* Brand Colors */
     --brand-pink: 320 85% 60%;
@@ -133,6 +137,43 @@
   /* Component Styles */
   .gradient-hero {
     background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gradient-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%), 
+      radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%), 
+      radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    animation: liquid-flow 15s ease-in-out infinite;
+    z-index: 1;
+  }
+
+  .gradient-hero > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  @keyframes liquid-flow {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.8;
+    }
+    33% {
+      transform: translate(-20px, -10px) scale(1.1);
+      opacity: 0.6;
+    }
+    66% {
+      transform: translate(20px, 10px) scale(0.9);
+      opacity: 0.9;
+    }
   }
 
   .badge-3d {

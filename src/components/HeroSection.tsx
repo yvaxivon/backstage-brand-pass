@@ -31,11 +31,11 @@ const HeroSection = () => {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-8">
               <div>
-                <h1 className="hero-headline text-black mb-4">
+                <h1 className="hero-headline text-white mb-4">
                   YOUR BRAND'S<br />
                   BACKSTAGE PASS
                 </h1>
-                <p className="hero-tagline text-black/80 max-w-md">
+                <p className="hero-tagline text-white/80 max-w-md">
                   Let's find your authentic voice and get your brand ready to rock the stage!
                 </p>
               </div>
@@ -43,7 +43,7 @@ const HeroSection = () => {
               <Button 
                 variant="secondary" 
                 size="lg" 
-                className="bg-black text-white hover:bg-black/90 rounded-full px-8 py-6 text-base font-semibold"
+                className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-base font-semibold"
               >
                 Available for new projects
               </Button>
@@ -63,7 +63,7 @@ const HeroSection = () => {
 
         {/* Bottom Large Name */}
         <div className="pb-8">
-          <h2 className="brand-name text-black text-center lg:text-left">
+          <h2 className="brand-name text-white text-center lg:text-left">
             JAZ YVONNE BALUARTE
           </h2>
         </div>
