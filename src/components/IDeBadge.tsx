@@ -1,22 +1,35 @@
 import profilePhoto from "@/assets/cartoon-profile.jpg";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const IDBadge = () => {
-  const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleDragStart = (e: React.DragEvent) => {
+  const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
-    e.dataTransfer.effectAllowed = "move";
-  };
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (rect) {
+      const offsetX = e.clientX - rect.left - rect.width / 2;
+      const offsetY = e.clientY - rect.top - rect.height / 2;
+      
+      const handleMouseMove = (e: MouseEvent) => {
+        setPosition({
+          x: e.clientX - rect.left - rect.width / 2 - offsetX,
+          y: e.clientY - rect.top - rect.height / 2 - offsetY
+        });
+      };
 
-  const handleDragEnd = () => {
-    setIsDragging(false);
-  };
+      const handleMouseUp = () => {
+        setIsDragging(false);
+        // Spring back to original position
+        setPosition({ x: 0, y: 0 });
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', handleMouseUp);
+      };
 
-  const handleDrag = (e: React.DragEvent) => {
-    if (e.clientX !== 0 && e.clientY !== 0) {
-      setPosition({ x: e.clientX - 160, y: e.clientY - 200 });
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
     }
   };
 
@@ -30,13 +43,12 @@ const IDBadge = () => {
       
       {/* Modern Pass Card Design */}
       <div 
-        className={`badge-3d badge-sway bg-white rounded-xl p-6 w-80 relative overflow-hidden shadow-2xl border border-gray-100 cursor-move transition-all duration-200 ${isDragging ? 'scale-105 rotate-2' : ''}`}
-        draggable
-        onDragStart={handleDragStart}
-        onDragEnd={handleDragEnd}
-        onDrag={handleDrag}
+        ref={cardRef}
+        className={`badge-3d bg-white rounded-xl p-6 w-80 relative overflow-hidden shadow-2xl border border-gray-100 cursor-move select-none transition-all duration-300 ${isDragging ? 'scale-105 z-50' : ''}`}
+        onMouseDown={handleMouseDown}
         style={{
-          transform: isDragging ? `translate(${position.x}px, ${position.y}px) rotate(2deg) scale(1.05)` : undefined
+          transform: `translate(${position.x}px, ${position.y}px) ${isDragging ? 'rotate(5deg)' : ''}`,
+          transition: isDragging ? 'none' : 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       >
         {/* Header with Pass Card Title */}
