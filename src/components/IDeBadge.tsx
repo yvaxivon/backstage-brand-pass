@@ -1,10 +1,44 @@
-import profilePhoto from "@/assets/profile-photo.jpg";
+import profilePhoto from "@/assets/cartoon-profile.jpg";
+import { useState } from "react";
 
 const IDBadge = () => {
+  const [isDragging, setIsDragging] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleDragStart = (e: React.DragEvent) => {
+    setIsDragging(true);
+    e.dataTransfer.effectAllowed = "move";
+  };
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+  };
+
+  const handleDrag = (e: React.DragEvent) => {
+    if (e.clientX !== 0 && e.clientY !== 0) {
+      setPosition({ x: e.clientX - 160, y: e.clientY - 200 });
+    }
+  };
+
   return (
-    <div className="relative">      
+    <div className="relative">
+      {/* Lanyard/Lace */}
+      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="w-1 h-12 bg-gray-400 rounded-full shadow-sm"></div>
+        <div className="w-3 h-3 bg-gray-500 rounded-full mx-auto -mt-1 shadow-sm"></div>
+      </div>
+      
       {/* Modern Pass Card Design */}
-      <div className="badge-3d badge-sway bg-white rounded-xl p-6 w-80 relative overflow-hidden shadow-2xl border border-gray-100">
+      <div 
+        className={`badge-3d badge-sway bg-white rounded-xl p-6 w-80 relative overflow-hidden shadow-2xl border border-gray-100 cursor-move transition-all duration-200 ${isDragging ? 'scale-105 rotate-2' : ''}`}
+        draggable
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEnd}
+        onDrag={handleDrag}
+        style={{
+          transform: isDragging ? `translate(${position.x}px, ${position.y}px) rotate(2deg) scale(1.05)` : undefined
+        }}
+      >
         {/* Header with Pass Card Title */}
         <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-200">
           <div className="flex items-center space-x-2">

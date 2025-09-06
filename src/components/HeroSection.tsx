@@ -68,10 +68,6 @@ const HeroSection = () => {
           </h2>
         </div>
 
-        {/* Footer Credit */}
-        <div className="absolute bottom-6 right-6">
-          <p className="text-black/60 text-xs">Made with Readymag</p>
-        </div>
       </div>
     </section>
   );
