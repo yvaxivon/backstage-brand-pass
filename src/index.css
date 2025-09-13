@@ -10,13 +10,14 @@
     --background: 0 0% 7%;
     --foreground: 0 0% 98%;
 
-    /* Creative Gradient System with Liquid Animation */
+    /* Fluid Liquid Background System */
     --gradient-hero: 
-      radial-gradient(circle at 20% 80%, rgba(55, 65, 81, 0.8) 0%, transparent 50%), 
-      radial-gradient(circle at 80% 20%, rgba(31, 41, 55, 0.9) 0%, transparent 50%), 
-      radial-gradient(circle at 40% 40%, rgba(75, 85, 99, 0.7) 0%, transparent 50%), 
-      linear-gradient(135deg, #111827 0%, #1f2937 50%, #374151 100%);
-    --gradient-accent: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+      radial-gradient(ellipse at 20% 80%, rgba(13, 148, 136, 0.4) 0%, transparent 50%), 
+      radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.3) 0%, transparent 50%), 
+      radial-gradient(ellipse at 40% 40%, rgba(14, 165, 233, 0.2) 0%, transparent 50%), 
+      radial-gradient(ellipse at 60% 70%, rgba(156, 163, 175, 0.3) 0%, transparent 50%),
+      linear-gradient(135deg, #0f172a 0%, #134e4a 25%, #155e63 50%, #0e7490 75%, #0f172a 100%);
+    --gradient-accent: linear-gradient(135deg, #0891b2 0%, #0d9488 100%);
 
     /* Brand Colors */
     --brand-pink: 320 85% 60%;
@@ -149,10 +150,11 @@
     right: 0;
     bottom: 0;
     background: 
-      radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%), 
-      radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%), 
-      radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
-    animation: liquid-flow 15s ease-in-out infinite;
+      radial-gradient(ellipse 800px 600px at 25% 75%, rgba(20, 184, 166, 0.6) 0%, transparent 50%), 
+      radial-gradient(ellipse 600px 800px at 75% 25%, rgba(6, 182, 212, 0.4) 0%, transparent 50%), 
+      radial-gradient(ellipse 700px 500px at 60% 60%, rgba(156, 163, 175, 0.5) 0%, transparent 50%),
+      radial-gradient(ellipse 900px 400px at 40% 80%, rgba(14, 165, 233, 0.3) 0%, transparent 50%);
+    animation: liquid-flow 20s ease-in-out infinite;
     z-index: 1;
   }
 
