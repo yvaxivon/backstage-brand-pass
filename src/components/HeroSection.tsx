@@ -4,7 +4,7 @@ import IDBadge from "./IDeBadge";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen gradient-hero relative overflow-hidden">
+    <section className="min-h-screen relative overflow-hidden">
       <Navigation />
       
       {/* Corner Logo */}
