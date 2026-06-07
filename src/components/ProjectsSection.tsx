@@ -121,9 +121,10 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
 const ProjectsSection = () => {
   return (
-    <section className="min-h-screen bg-background py-20 px-4 relative">
+    <section className="min-h-screen py-16 sm:py-20 px-4 relative">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
