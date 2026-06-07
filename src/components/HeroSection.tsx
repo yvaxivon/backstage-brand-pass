@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import Navigation from "./Navigation";
 import IDBadge from "./IDeBadge";
+import ThemeToggle from "./ThemeToggle";
+
 
 const HeroSection = () => {
   return (
@@ -14,8 +16,9 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Social Icons */}
-      <div className="absolute top-6 right-6 flex space-x-3">
+      {/* Social Icons + Theme toggle */}
+      <div className="absolute top-6 right-6 flex space-x-3 z-10">
+        <ThemeToggle />
         <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
           <span className="text-white text-sm font-bold">@</span>
         </div>
@@ -23,6 +26,7 @@ const HeroSection = () => {
           <span className="text-white text-sm font-bold">Be</span>
         </div>
       </div>
+
 
       <div className="container mx-auto px-6 h-screen flex flex-col justify-between">
         {/* Main Content */}
