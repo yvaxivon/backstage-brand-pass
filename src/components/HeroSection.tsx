@@ -60,13 +60,6 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Bottom Large Name */}
-        <div className="pb-8">
-          <h2 className="brand-name text-white text-center lg:text-left">
-            JAZ YVONNE BALUARTE
-          </h2>
-        </div>
-
       </div>
     </section>
   );
